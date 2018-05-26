@@ -2,8 +2,9 @@
 
 namespace Lrf141\Knight;
 
+use Psr\Container\ContainerInterface;
 
-class Container
+class Container implements ContainerInterface
 {
 
 }

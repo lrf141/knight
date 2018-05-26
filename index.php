@@ -1,3 +1,3 @@
 <?php
 
-phpinfo();
+new Lrf141\Knight\Container();
