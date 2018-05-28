@@ -18,7 +18,7 @@
         "friendsofphp/php-cs-fixer": "^2.11"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Lrf141\\Knight\\": "src/"
         }
     }

@@ -1,5 +1,6 @@
 <?php
 
 require_once 'vendor/autoload.php';
+require_once 'src/Container.php';
 
-new Lrf141\Knight\Container();
+$container = new Lrf141\Knight\Container;
