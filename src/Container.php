@@ -14,6 +14,11 @@ class Container implements ContainerInterface
      */
     private $definitionFactory;
 
+    public function __construct()
+    {
+        $this->definitionFactory = new Definition\DefinitionFactory();
+    }
+
     public function add(string $id, string $concrete = null, array $args = [], $share = false)
     {
         unset($this->define[$id]);
@@ -31,16 +36,18 @@ class Container implements ContainerInterface
         $this->add($id, $concrete, true);
     }
 
-    public function get(string $id)
+    public function get($id)
     {
+        return null;
     }
 
-    public function has(string $id): bool
+    public function has($id): bool
     {
+        return false;
     }
-
 
     public function hasShare(string $id): bool
     {
+        return false;
     }
 }
