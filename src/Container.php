@@ -30,9 +30,9 @@ class Container implements ContainerInterface
 
         $definitions = $this->definitionFactory->getDefinition($id, $concrete, $args);
 
-        if($share === false){
+        if ($share === false) {
             $this->define[$id] = $definitions;
-        }else{
+        } else {
             $this->share[$id] = $definitions;
         }
     }

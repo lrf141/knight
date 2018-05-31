@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class ContainerTest extends TestCase
 {
-    
     public function testSimpleAddAndGet()
     {
         $container = new Container;
@@ -15,12 +14,11 @@ class ContainerTest extends TestCase
         $this->assertTrue($container->has('test'));
 
         $this->assertTrue($container->get('test') instanceof TestClass);
-
     }
-
 }
 
 
-class TestClass{
+class TestClass
+{
     const text = 'hello,world';
 }
