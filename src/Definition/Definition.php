@@ -11,8 +11,8 @@ class Definition
   
     public function __construct(string $id, string $concrete = null)
     {
-        $this->id = id;
-        $this->concrete = concrete;
+        $this->id = $id;
+        $this->concrete = $concrete;
     }
 
     public function withArgument($arg)

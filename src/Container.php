@@ -29,6 +29,12 @@ class Container implements ContainerInterface
         }
 
         $definitions = $this->definitionFactory->getDefinition($id, $concrete, $args);
+
+        if($share === false){
+            $this->define[$id] = $definitions;
+        }else{
+            $this->share[$id] = $definitions;
+        }
     }
 
     public function share(string $id, string $concrete = null)
@@ -38,16 +44,16 @@ class Container implements ContainerInterface
 
     public function get($id)
     {
-        return null;
+        return $this->has($id) ? $this->define[$id] : $this->share[$id];
     }
 
     public function has($id): bool
     {
-        return false;
+        return array_key_exists($id, $this->define);
     }
 
     public function hasShare(string $id): bool
     {
-        return false;
+        return array_key_exists($id, $this->share);
     }
 }
