@@ -11,8 +11,6 @@ class ContainerTest extends TestCase
         $container = new Container;
         $container->add('test', 'TestClass');
 
-        $this->assertTrue($container->has('test'));
-
         $this->assertTrue($container->get('test') instanceof TestClass);
     }
 
@@ -31,6 +29,18 @@ class ContainerTest extends TestCase
         $container->share('test', 'TestClass');
         
         $this->assertTrue($container->hasShare('test'));
+    }
+
+    public function testSameInstance()
+    {
+        $container = new Container;
+        $container->add('test', 'TestClass');
+
+        $instance1 = $container->get('test');
+        $instance2 = $container->get('test');
+
+        $this->assertTrue($instance1 === $instance2);
+
     }
 }
 
