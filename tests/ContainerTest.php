@@ -40,7 +40,6 @@ class ContainerTest extends TestCase
         $instance2 = $container->get('test');
 
         $this->assertTrue($instance1 === $instance2);
-
     }
 }
 
