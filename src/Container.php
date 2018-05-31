@@ -39,7 +39,7 @@ class Container implements ContainerInterface
 
     public function share(string $id, string $concrete = null)
     {
-        $this->add($id, $concrete, true);
+        $this->add($id, $concrete, [], true);
     }
 
     public function get($id)
